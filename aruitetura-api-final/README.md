@@ -25,12 +25,15 @@ O projeto segue o padrao **MVC** adaptado para API REST (sem camada de View com 
 
 ### Diagrama C4
 
-O arquivo `docs/arquitetura-c4.drawio` contem dois diagramas:
+#### Level 1 — Contexto do sistema
 
-- **C4 Level 1 — Contexto**: mostra o sistema, os atores externos (Parceiro, Administrador) e o banco de dados.
-- **C4 Level 3 — Componentes**: detalha as camadas internas (Controller, Service, Repository, Model, Schema) e como se relacionam.
+![C4 Contexto](docs/c4-contexto.png)
 
-Para visualizar, abra o arquivo no [draw.io](https://app.diagrams.net/) ou importe direto no VS Code com a extensao Draw.io Integration.
+#### Level 3 — Componentes (MVC)
+
+![C4 Componentes](docs/c4-componentes.png)
+
+> O arquivo editavel `docs/arquitetura-c4.drawio` pode ser aberto no [draw.io](https://app.diagrams.net/) ou no VS Code com a extensao Draw.io Integration.
 
 ### Fluxo de um request
 
