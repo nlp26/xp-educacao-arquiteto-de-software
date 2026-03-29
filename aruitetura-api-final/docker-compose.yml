@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: clientes_postgres
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_secret
+      POSTGRES_DB: clientes_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d clientes_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  api:
+    build: .
+    container_name: clientes_api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://app_user:app_secret@db:5432/clientes_db
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pg_data:

@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2026-03-29T00:00:00.000Z" agent="draw.io" version="24.0.0">
+  <diagram id="c4-context" name="C4 - Contexto">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="&lt;b&gt;Parceiro&lt;/b&gt;&lt;br&gt;[Pessoa]&lt;br&gt;&lt;br&gt;Consumidor externo&lt;br&gt;que acessa dados de&lt;br&gt;clientes via API" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;strokeColor=#3B8132;fontColor=#ffffff;fillColor=#5B9A40;align=center;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="60" width="200" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="&lt;b&gt;Administrador&lt;/b&gt;&lt;br&gt;[Pessoa]&lt;br&gt;&lt;br&gt;Responsavel pela&lt;br&gt;gestao de clientes" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;strokeColor=#3B8132;fontColor=#ffffff;fillColor=#5B9A40;align=center;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="60" width="200" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="&lt;b&gt;API de Clientes&lt;/b&gt;&lt;br&gt;[Software System]&lt;br&gt;&lt;br&gt;API REST em Python/FastAPI&lt;br&gt;padrao MVC com persistencia&lt;br&gt;em PostgreSQL" style="rounded=1;whiteSpace=wrap;html=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;strokeColor=#1168BD;fontColor=#ffffff;fillColor=#438DD5;align=center;fontSize=12;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="400" y="320" width="340" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;[Database]&lt;br&gt;&lt;br&gt;Armazena dados de&lt;br&gt;clientes (tabela clientes)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#666666;fontColor=#ffffff;fillColor=#555555;align=center;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="470" y="600" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Consome API&lt;br&gt;[HTTP/JSON]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#707070;" edge="1" source="2" target="4" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Gerencia clientes&lt;br&gt;[HTTP/JSON]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#707070;" edge="1" source="3" target="4" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Le e grava dados&lt;br&gt;[SQLAlchemy / TCP]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#707070;" edge="1" source="4" target="5" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="c4-components" name="C4 - Componentes MVC">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="boundary" value="&lt;b&gt;API de Clientes&lt;/b&gt; [Container: FastAPI]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;strokeColor=#1168BD;fontColor=#1168BD;fillColor=none;dashed=1;dashPattern=8 4;align=left;verticalAlign=top;fontSize=13;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="960" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl" value="&lt;b&gt;ClienteController&lt;/b&gt;&lt;br&gt;[Component: APIRouter]&lt;br&gt;&lt;br&gt;Define as rotas REST.&lt;br&gt;Recebe requests HTTP,&lt;br&gt;delega pro Service e&lt;br&gt;devolve a resposta." style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1168BD;fontColor=#ffffff;fillColor=#438DD5;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="100" width="220" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="schema" value="&lt;b&gt;Schema&lt;/b&gt;&lt;br&gt;[Component: Pydantic]&lt;br&gt;&lt;br&gt;DTOs de entrada e saida.&lt;br&gt;Valida e serializa JSON." style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#9B59B6;fontColor=#ffffff;fillColor=#8E44AD;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="100" width="220" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc" value="&lt;b&gt;ClienteService&lt;/b&gt;&lt;br&gt;[Component: Class]&lt;br&gt;&lt;br&gt;Regras de negocio.&lt;br&gt;Orquestra repository,&lt;br&gt;valida invariantes,&lt;br&gt;lanca excecoes HTTP." style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#E67E22;fontColor=#ffffff;fillColor=#D35400;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="320" width="220" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo" value="&lt;b&gt;ClienteRepository&lt;/b&gt;&lt;br&gt;[Component: Class]&lt;br&gt;&lt;br&gt;Acesso a dados.&lt;br&gt;Encapsula queries SQL&lt;br&gt;via SQLAlchemy ORM." style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#27AE60;fontColor=#ffffff;fillColor=#1E8449;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="540" width="220" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="model" value="&lt;b&gt;Cliente (Model)&lt;/b&gt;&lt;br&gt;[Component: SQLAlchemy Entity]&lt;br&gt;&lt;br&gt;Entidade de dominio.&lt;br&gt;Mapeada para tabela 'clientes'." style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#C0392B;fontColor=#ffffff;fillColor=#E74C3C;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="540" width="240" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;[Database]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#666666;fontColor=#ffffff;fillColor=#555555;align=center;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="550" width="140" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="delega" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;" edge="1" source="ctrl" target="svc" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;" edge="1" source="ctrl" target="schema" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="chama" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;" edge="1" source="svc" target="repo" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="opera sobre" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;" edge="1" source="repo" target="model" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="SQL / TCP" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;" edge="1" source="repo" target="db" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;dashed=1;" edge="1" source="svc" target="schema" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="390"/>
+              <mxPoint x="680" y="170"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="http-in" value="HTTP Request&lt;br&gt;[JSON]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontColor=#707070;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" target="ctrl" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="60" as="sourcePoint"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
