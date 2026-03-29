@@ -30,11 +30,7 @@ O projeto segue o padrao **MVC** adaptado para API REST (sem camada de View com 
 
 #### Level 1 — Contexto do sistema
 
-![C4 Contexto](docs/c4-contexto.png)
-
 #### Level 3 — Componentes (MVC)
-
-![C4 Componentes](docs/c4-componentes.png)
 
 > O arquivo editavel `docs/arquitetura-c4.drawio` pode ser aberto no [draw.io](https://app.diagrams.net/) ou no VS Code com a extensao Draw.io Integration.
 
