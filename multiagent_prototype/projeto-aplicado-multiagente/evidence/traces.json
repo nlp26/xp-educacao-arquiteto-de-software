@@ -1,0 +1,565 @@
+[
+  {
+    "name": "memory.long_term.search",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "987c999f8b043349",
+    "parent_id": "d0f6ed3bb59621d8",
+    "start": "2026-05-24T20:31:53.347529",
+    "end": "2026-05-24T20:31:55.853120",
+    "duration_ms": 2505.59,
+    "attributes": {
+      "memory.query": "Qual é a raiz quadrada de 144 somada a 7?",
+      "memory.k": 2,
+      "memory.results_count": 2
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "6abfa9ed089f49a2",
+    "parent_id": "0cf3da2eca018387",
+    "start": "2026-05-24T20:31:55.854518",
+    "end": "2026-05-24T20:31:59.323206",
+    "duration_ms": 3468.69,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 465,
+      "llm.response_chars": 10
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "router.classify",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "0cf3da2eca018387",
+    "parent_id": "d0f6ed3bb59621d8",
+    "start": "2026-05-24T20:31:55.854413",
+    "end": "2026-05-24T20:31:59.324798",
+    "duration_ms": 3470.39,
+    "attributes": {
+      "router.input": "Qual é a raiz quadrada de 144 somada a 7?",
+      "router.raw_output": "calculator",
+      "router.decision": "calculator"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.router",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "d0f6ed3bb59621d8",
+    "parent_id": "4a25c8a636d10931",
+    "start": "2026-05-24T20:31:53.347489",
+    "end": "2026-05-24T20:31:59.324852",
+    "duration_ms": 5977.36,
+    "attributes": {
+      "orchestrator.route": "calculator"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "b538ee67cb79db07",
+    "parent_id": "fed8dcf1ac996b44",
+    "start": "2026-05-24T20:31:59.342970",
+    "end": "2026-05-24T20:32:01.209194",
+    "duration_ms": 1866.22,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 234,
+      "llm.response_chars": 13
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "tool.calculator",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "9b98b20c5e0c8323",
+    "parent_id": "fed8dcf1ac996b44",
+    "start": "2026-05-24T20:32:01.211887",
+    "end": "2026-05-24T20:32:01.216473",
+    "duration_ms": 4.59,
+    "attributes": {
+      "tool.input": "sqrt(144) + 7",
+      "tool.output": "19.0",
+      "tool.status": "success"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "44e046aec86fabd5",
+    "parent_id": "fed8dcf1ac996b44",
+    "start": "2026-05-24T20:32:01.216802",
+    "end": "2026-05-24T20:32:06.464464",
+    "duration_ms": 5247.66,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 228,
+      "llm.response_chars": 123
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "executor.run",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "fed8dcf1ac996b44",
+    "parent_id": "798b2672973667a4",
+    "start": "2026-05-24T20:31:59.342716",
+    "end": "2026-05-24T20:32:06.465744",
+    "duration_ms": 7123.03,
+    "attributes": {
+      "executor.route": "calculator",
+      "executor.input": "Qual é a raiz quadrada de 144 somada a 7?",
+      "executor.extracted_expr": "sqrt(144) + 7",
+      "executor.tool_used": "calculator"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.executor",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "798b2672973667a4",
+    "parent_id": "4a25c8a636d10931",
+    "start": "2026-05-24T20:31:59.342436",
+    "end": "2026-05-24T20:32:06.466245",
+    "duration_ms": 7123.81,
+    "attributes": {
+      "orchestrator.tool_used": "calculator"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "32f9015bef937a92",
+    "parent_id": "7b8e7ffd00022045",
+    "start": "2026-05-24T20:32:06.482951",
+    "end": "2026-05-24T20:32:07.949747",
+    "duration_ms": 1466.8,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 434,
+      "llm.response_chars": 2
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "validator.check",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "7b8e7ffd00022045",
+    "parent_id": "563b8494233ae358",
+    "start": "2026-05-24T20:32:06.482575",
+    "end": "2026-05-24T20:32:07.951008",
+    "duration_ms": 1468.43,
+    "attributes": {
+      "validator.input_question": "Qual é a raiz quadrada de 144 somada a 7?",
+      "validator.output_chars": 123,
+      "validator.llm_verdict": "OK",
+      "validator.result": "ok"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "memory.long_term.store",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "e4579cde0eca79c3",
+    "parent_id": "563b8494233ae358",
+    "start": "2026-05-24T20:32:07.959738",
+    "end": "2026-05-24T20:32:12.432775",
+    "duration_ms": 4473.04,
+    "attributes": {
+      "memory.doc_id": "turn_8",
+      "memory.text_chars": 171
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.validator",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "563b8494233ae358",
+    "parent_id": "4a25c8a636d10931",
+    "start": "2026-05-24T20:32:06.482446",
+    "end": "2026-05-24T20:32:12.433326",
+    "duration_ms": 5950.88,
+    "attributes": {
+      "orchestrator.validation": true
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.run",
+    "trace_id": "26183c6ceb6f86cfc13f2803daafccbd",
+    "span_id": "4a25c8a636d10931",
+    "parent_id": null,
+    "start": "2026-05-24T20:31:53.345762",
+    "end": "2026-05-24T20:32:12.485817",
+    "duration_ms": 19140.06,
+    "attributes": {
+      "session.user_input": "Qual é a raiz quadrada de 144 somada a 7?",
+      "session.tool_used": "calculator",
+      "session.validation_ok": true
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "memory.long_term.search",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "a63de8bed1e8b0cb",
+    "parent_id": "75263868a9f2b444",
+    "start": "2026-05-24T20:32:12.531643",
+    "end": "2026-05-24T20:32:17.084498",
+    "duration_ms": 4552.85,
+    "attributes": {
+      "memory.query": "O que é uma arquitetura de referência em engenharia de software?",
+      "memory.k": 2,
+      "memory.results_count": 2
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "8a101a8e839c544f",
+    "parent_id": "2f04c314ab257650",
+    "start": "2026-05-24T20:32:17.100755",
+    "end": "2026-05-24T20:32:25.665552",
+    "duration_ms": 8564.8,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 1893,
+      "llm.response_chars": 9
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "router.classify",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "2f04c314ab257650",
+    "parent_id": "75263868a9f2b444",
+    "start": "2026-05-24T20:32:17.097785",
+    "end": "2026-05-24T20:32:25.673488",
+    "duration_ms": 8575.7,
+    "attributes": {
+      "router.input": "O que é uma arquitetura de referência em engenharia de software?",
+      "router.raw_output": "knowledge",
+      "router.decision": "knowledge"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.router",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "75263868a9f2b444",
+    "parent_id": "e28cb87d20381aff",
+    "start": "2026-05-24T20:32:12.531588",
+    "end": "2026-05-24T20:32:25.673521",
+    "duration_ms": 13141.93,
+    "attributes": {
+      "orchestrator.route": "knowledge"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "6ddb26a968b67fe5",
+    "parent_id": "3a5708419163d113",
+    "start": "2026-05-24T20:32:25.793187",
+    "end": "2026-05-24T20:32:53.595972",
+    "duration_ms": 27802.78,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 2008,
+      "llm.response_chars": 997
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "executor.run",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "3a5708419163d113",
+    "parent_id": "48c442070ebe3343",
+    "start": "2026-05-24T20:32:25.789559",
+    "end": "2026-05-24T20:32:53.599762",
+    "duration_ms": 27810.2,
+    "attributes": {
+      "executor.route": "knowledge",
+      "executor.input": "O que é uma arquitetura de referência em engenharia de software?",
+      "executor.tool_used": "none"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.executor",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "48c442070ebe3343",
+    "parent_id": "e28cb87d20381aff",
+    "start": "2026-05-24T20:32:25.788884",
+    "end": "2026-05-24T20:32:53.601496",
+    "duration_ms": 27812.61,
+    "attributes": {
+      "orchestrator.tool_used": "none"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "b71abd1b2d065fef",
+    "parent_id": "c6f2d2f8bff4b9e2",
+    "start": "2026-05-24T20:32:53.639328",
+    "end": "2026-05-24T20:32:56.923234",
+    "duration_ms": 3283.91,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 1331,
+      "llm.response_chars": 2
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "validator.check",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "c6f2d2f8bff4b9e2",
+    "parent_id": "16493001ba6857ba",
+    "start": "2026-05-24T20:32:53.636925",
+    "end": "2026-05-24T20:32:56.923812",
+    "duration_ms": 3286.89,
+    "attributes": {
+      "validator.input_question": "O que é uma arquitetura de referência em engenharia de software?",
+      "validator.output_chars": 997,
+      "validator.llm_verdict": "OK",
+      "validator.result": "ok"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "memory.long_term.store",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "3b1acac216b29d98",
+    "parent_id": "16493001ba6857ba",
+    "start": "2026-05-24T20:32:56.925614",
+    "end": "2026-05-24T20:32:59.861847",
+    "duration_ms": 2936.23,
+    "attributes": {
+      "memory.doc_id": "turn_9",
+      "memory.text_chars": 1068
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.validator",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "16493001ba6857ba",
+    "parent_id": "e28cb87d20381aff",
+    "start": "2026-05-24T20:32:53.636278",
+    "end": "2026-05-24T20:32:59.862793",
+    "duration_ms": 6226.52,
+    "attributes": {
+      "orchestrator.validation": true
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.run",
+    "trace_id": "1629e50035bfca0d16fc55a083f472a4",
+    "span_id": "e28cb87d20381aff",
+    "parent_id": null,
+    "start": "2026-05-24T20:32:12.492974",
+    "end": "2026-05-24T20:32:59.878918",
+    "duration_ms": 47385.94,
+    "attributes": {
+      "session.user_input": "O que é uma arquitetura de referência em engenharia de software?",
+      "session.tool_used": "none",
+      "session.validation_ok": true
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "memory.long_term.search",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "ca4933ac8d1e1c60",
+    "parent_id": "d46017466b3637f1",
+    "start": "2026-05-24T20:32:59.884915",
+    "end": "2026-05-24T20:33:02.197139",
+    "duration_ms": 2312.22,
+    "attributes": {
+      "memory.query": "Quem é o atual CEO da empresa Apple?",
+      "memory.k": 2,
+      "memory.results_count": 2
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "48340607fb52cccc",
+    "parent_id": "8fb0a5d9f7a8e1db",
+    "start": "2026-05-24T20:33:02.231329",
+    "end": "2026-05-24T20:33:09.048589",
+    "duration_ms": 6817.26,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 2454,
+      "llm.response_chars": 9
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "router.classify",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "8fb0a5d9f7a8e1db",
+    "parent_id": "d46017466b3637f1",
+    "start": "2026-05-24T20:33:02.229066",
+    "end": "2026-05-24T20:33:09.049813",
+    "duration_ms": 6820.75,
+    "attributes": {
+      "router.input": "Quem é o atual CEO da empresa Apple?",
+      "router.raw_output": "knowledge",
+      "router.decision": "knowledge"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.router",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "d46017466b3637f1",
+    "parent_id": "b835514c417c5ca3",
+    "start": "2026-05-24T20:32:59.884867",
+    "end": "2026-05-24T20:33:09.050067",
+    "duration_ms": 9165.2,
+    "attributes": {
+      "orchestrator.route": "knowledge"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "72f1cba87afa0527",
+    "parent_id": "e86cde245bf4d4af",
+    "start": "2026-05-24T20:33:09.093180",
+    "end": "2026-05-24T20:33:19.266767",
+    "duration_ms": 10173.59,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 2569,
+      "llm.response_chars": 106
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "executor.run",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "e86cde245bf4d4af",
+    "parent_id": "1d4e3231e53b7ca8",
+    "start": "2026-05-24T20:33:09.089686",
+    "end": "2026-05-24T20:33:19.275109",
+    "duration_ms": 10185.42,
+    "attributes": {
+      "executor.route": "knowledge",
+      "executor.input": "Quem é o atual CEO da empresa Apple?",
+      "executor.tool_used": "none"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.executor",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "1d4e3231e53b7ca8",
+    "parent_id": "b835514c417c5ca3",
+    "start": "2026-05-24T20:33:09.088875",
+    "end": "2026-05-24T20:33:19.275140",
+    "duration_ms": 10186.26,
+    "attributes": {
+      "orchestrator.tool_used": "none"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "llm.invoke",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "395601b3547ac0b0",
+    "parent_id": "8e4e04c8cf144b24",
+    "start": "2026-05-24T20:33:19.368477",
+    "end": "2026-05-24T20:33:21.248358",
+    "duration_ms": 1879.88,
+    "attributes": {
+      "llm.model": "qwen2.5:7b",
+      "llm.temperature": 0.1,
+      "llm.prompt_chars": 412,
+      "llm.response_chars": 2
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "validator.check",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "8e4e04c8cf144b24",
+    "parent_id": "8c1672ceaf539377",
+    "start": "2026-05-24T20:33:19.360236",
+    "end": "2026-05-24T20:33:21.255578",
+    "duration_ms": 1895.34,
+    "attributes": {
+      "validator.input_question": "Quem é o atual CEO da empresa Apple?",
+      "validator.output_chars": 106,
+      "validator.llm_verdict": "OK",
+      "validator.result": "ok"
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "memory.long_term.store",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "404f3990af57276a",
+    "parent_id": "8c1672ceaf539377",
+    "start": "2026-05-24T20:33:21.265050",
+    "end": "2026-05-24T20:33:25.896228",
+    "duration_ms": 4631.18,
+    "attributes": {
+      "memory.doc_id": "turn_10",
+      "memory.text_chars": 149
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.node.validator",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "8c1672ceaf539377",
+    "parent_id": "b835514c417c5ca3",
+    "start": "2026-05-24T20:33:19.357940",
+    "end": "2026-05-24T20:33:25.896736",
+    "duration_ms": 6538.8,
+    "attributes": {
+      "orchestrator.validation": true
+    },
+    "status": "UNSET"
+  },
+  {
+    "name": "orchestrator.run",
+    "trace_id": "12d00f70dfb86b591c4e898cd82bb818",
+    "span_id": "b835514c417c5ca3",
+    "parent_id": null,
+    "start": "2026-05-24T20:32:59.879822",
+    "end": "2026-05-24T20:33:25.934443",
+    "duration_ms": 26054.62,
+    "attributes": {
+      "session.user_input": "Quem é o atual CEO da empresa Apple?",
+      "session.tool_used": "none",
+      "session.validation_ok": true
+    },
+    "status": "UNSET"
+  }
+]

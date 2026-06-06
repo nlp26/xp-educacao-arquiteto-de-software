@@ -1,0 +1,47 @@
+
+Iniciando suite de evidências - 2026-05-24T20:31:53.343337
+
+
+======================================================================
+Cenário S1: Cálculo determinístico (rota: calculator)
+Pergunta: Qual é a raiz quadrada de 144 somada a 7?
+Rota esperada: calculator
+======================================================================
+
+→ Rota obtida: calculator
+→ Ferramenta:  calculator
+→ Validação:   OK
+→ Duração:     19.14s
+→ Resposta:
+A raiz quadrada de 144 é 12, e quando você soma 7 a esse valor, o resultado é 19. Portanto, a resposta à sua pergunta é 19.
+
+======================================================================
+Cenário S2: Pergunta conceitual (rota: knowledge)
+Pergunta: O que é uma arquitetura de referência em engenharia de software?
+Rota esperada: knowledge
+======================================================================
+
+→ Rota obtida: knowledge
+→ Ferramenta:  nenhuma
+→ Validação:   OK
+→ Duração:     47.39s
+→ Resposta:
+A arquitetura de referência em engenharia de software é um modelo ou estrutura padronizada que serve como guia para o desenvolvimento e a implementação de sistemas de software. Ela define os componentes principais, suas relações e as interfaces entre eles, proporcionando uma base comum para diferentes projetos. Essa abordagem ajuda a garantir consistência, facilita a comparação entre projetos semelhantes e pode acelerar o processo de desenvolvimento ao oferecer soluções provadas em um formato qu
+
+======================================================================
+Cenário S3: Busca por informação externa (rota: web_search)
+Pergunta: Quem é o atual CEO da empresa Apple?
+Rota esperada: web_search
+======================================================================
+
+→ Rota obtida: knowledge
+→ Ferramenta:  nenhuma
+→ Validação:   OK
+→ Duração:     26.06s
+→ Resposta:
+Atualmente, o CEO da empresa Apple é Tim Cook. Ele assumiu este cargo em 2011, após a saída de Steve Jobs.
+
+✓ Resumo salvo em: /Users/ds/Downloads/multiagent_prototype/evidence/run_summary.md
+
+✓ Log salvo em: /Users/ds/Downloads/multiagent_prototype/evidence/execution_log.txt
+✓ Traces salvos em: /Users/ds/Downloads/multiagent_prototype/evidence/traces.json
